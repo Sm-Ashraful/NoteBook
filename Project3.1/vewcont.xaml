@@ -1,0 +1,101 @@
+﻿<Page x:Class="Project3._1.vewcont"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project3._1"
+      mc:Ignorable="d"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="440" d:DesignWidth="485"
+      Title="vewcont">
+
+    <Grid>
+        <Grid>
+            <materialDesign:PackIcon Kind="FileSearch" Margin="44,0,0,0" Height="30" Width="35" />
+            <TextBox
+  x:Name="shbx"
+                materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+  materialDesign:HintAssist.Hint="Search" Margin="82,0,118,415" SelectionBrush="Black" CaretBrush="Black" KeyDown="down" KeyUp="up" />
+        </Grid>
+        <Grid Margin="0,35,0,0">
+            <ScrollViewer>
+
+                <ItemsControl Name="id" ItemsSource="{Binding Contact}" Height="auto">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid IsItemsHost="True"
+                         Columns="1" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="10" BorderThickness="2"
+                    Background="#FFF1F1F1">
+                                <Grid >
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                        <Button Tag="{Binding id}"
+                                         Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                         ToolTip="Edit" Click="editclk" >
+                                            <materialDesign:PackIcon
+                                         Kind="FileDocumentEditOutline" />
+                                        </Button>
+                                        <Button Tag="{Binding id}"
+                                          Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                          ToolTip="Delete" Click="delclk">
+                                            <materialDesign:PackIcon
+                                          Kind="DeleteForever" />
+                                        </Button>
+                                    </StackPanel>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="1" Text="Name :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="2" Text="Number :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="3" Text="Email :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="4" Text="Facebook :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="5" Text="Other :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="6" Text="Address :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+
+
+                                    <Label Grid.Row="1" Grid.Column="1" Margin="0,5,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"   FontFamily="Leelawadee UI" FontWeight="Bold">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding Name}"/>
+                                    </Label>
+
+                                    <Label Grid.Row="2" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"   FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding Number}"/>
+                                    </Label>
+                                    <Label Grid.Row="3" Grid.Column="1"  Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"  FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding Email}"/>
+                                    </Label>
+                                    <Label Grid.Row="4" Grid.Column="1"  Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"   FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding Fb}"/>
+                                    </Label>
+                                    <Label Grid.Row="5" Grid.Column="1"  Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"   FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding Other}"/>
+                                    </Label>
+                                    <Label Grid.Row="6" Grid.Column="1"  Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"  FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding Address}"/>
+                                    </Label>
+
+
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

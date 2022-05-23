@@ -1,0 +1,85 @@
+﻿<Page x:Class="Project3._1.upcoming"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project3._1"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="400" d:DesignWidth="485"
+      Title="upcoming">
+
+    <Grid>
+        <Grid>
+            <ScrollViewer>
+
+                <ItemsControl Name="id" ItemsSource="{Binding pbplan}" Height="auto">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid IsItemsHost="True"
+                         Columns="1" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="10" BorderThickness="2"
+                    Background="#FFF1F1F1">
+                                <Grid >
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+
+                                        <Button Tag="{Binding id}"
+                                          Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                          ToolTip="Edit" Click="edit">
+                                            <materialDesign:PackIcon
+                                          Kind="FileDocumentEditOutline" />
+                                        </Button>
+                                        <Button Tag="{Binding id}"
+                                          Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                          ToolTip="Success" Click="success">
+                                            <materialDesign:PackIcon
+                                          Kind="BookmarkCheck" />
+                                        </Button>
+                                    </StackPanel>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="1" Text="Date :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="2" Text="Start Time :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="3" Text="End Time :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="4" Text="Plan :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+
+
+
+                                    <Label Grid.Row="1" Grid.Column="1" Margin="0,5,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"   FontFamily="Leelawadee UI" FontWeight="Bold">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding dt, Mode=OneWay,  StringFormat='MM-dd-yyyy'}"/>
+                                    </Label>
+
+                                    <Label Grid.Row="2" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"   FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding st}"/>
+                                    </Label>
+                                    <Label Grid.Row="3" Grid.Column="1"  Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"  FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding et}"/>
+                                    </Label>
+                                    <Label Grid.Row="4" Grid.Column="1"  Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"   FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding pln}"/>
+                                    </Label>
+
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

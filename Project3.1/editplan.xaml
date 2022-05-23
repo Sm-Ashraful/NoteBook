@@ -1,0 +1,71 @@
+﻿<Window x:Class="Project3._1.editplan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project3._1"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="editplan" WindowStartupLocation="CenterScreen" Height="440" Width="485" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}"  ResizeMode="NoResize" MouseDown="down">
+    <Grid>
+        <Rectangle RadiusX="10" RadiusY="10" Opacity="0.90" Fill="#F8EEEEEE"/>
+        <DatePicker x:Name="pdate" Height="45" 
+                     
+  materialDesign:HintAssist.Hint="mm/dd/yyyy"
+                    materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="145,60,120,335" Foreground="Black" />
+        <materialDesign:TimePicker x:Name="stime" 
+                                    materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+           
+  Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+  materialDesign:HintAssist.Hint="hh:mm  AM/PM" Margin="170,110,120,293" RenderTransformOrigin="0,0" Foreground="Black" >
+            <materialDesign:TimePicker.FocusVisualStyle>
+                <Style/>
+            </materialDesign:TimePicker.FocusVisualStyle>
+            <materialDesign:TimePicker.BindingGroup>
+                <BindingGroup ValidatesOnNotifyDataError="True"/>
+            </materialDesign:TimePicker.BindingGroup>
+        </materialDesign:TimePicker>
+        <TextBox x:Name="plan"
+            materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+    Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
+    VerticalAlignment="Top"
+    AcceptsReturn="True"
+    TextWrapping="Wrap"
+    MaxWidth="400"
+    materialDesign:HintAssist.Hint="Your Plan"
+    IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextFieldTextBoxEnabledComboBox}" Margin="25,215,28,0" Height="130" CaretBrush="Black" SelectionBrush="Black" Foreground="Black" />
+        <Grid
+  Width="124"/>
+        <Label x:Name="label1" Content="Date:" HorizontalAlignment="Left" Margin="50,75,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Leelawadee UI" FontWeight="Bold" RenderTransformOrigin="0.427,-0.208"/>
+        <Label x:Name="label1_Copy" Content="Start Time:" HorizontalAlignment="Left" Margin="48,120,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Leelawadee UI" FontWeight="Bold" RenderTransformOrigin="0.427,-0.208"/>
+        <Label x:Name="label1_Copy1" Content="End Time:" HorizontalAlignment="Left" Margin="50,160,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Leelawadee UI" FontWeight="Bold" RenderTransformOrigin="0.427,-0.208"/>
+        <materialDesign:TimePicker x:Name="etime"
+                                    materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+            VerticalContentAlignment="Center"
+            Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+            materialDesign:HintAssist.Hint="hh:mm  AM/PM" Margin="160,153,120,250" Foreground="Black" >
+            <materialDesign:TimePicker.FocusVisualStyle>
+                <Style/>
+            </materialDesign:TimePicker.FocusVisualStyle>
+        </materialDesign:TimePicker>
+        <Button
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+     Margin="180,365,180,35" Height="Auto" Background="Black" FontSize="20" Click="Button_Click_2" BorderBrush="Black">
+            Save
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+             Margin="315,365,45,35" Height="Auto" Background="Black" FontSize="20" Content="Close" Click="Button_Click_1" BorderBrush="Black"/>
+        <Button
+  Style="{StaticResource MaterialDesignIconButton}"
+   Margin="448,4,4,403" Height="Auto" Width="Auto" Click="Button_Click">
+            <materialDesign:PackIcon
+    Kind="Close" Foreground="Black" />
+        </Button>
+    </Grid>
+</Window>

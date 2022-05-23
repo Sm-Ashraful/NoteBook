@@ -1,0 +1,33 @@
+﻿<Window x:Class="Project3._1.massage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project3._1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="massage" Icon="img/icone.ico" WindowStartupLocation="CenterScreen" Height="200" Width="350" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}" MouseDown="down" ResizeMode="NoResize">
+    <Grid>
+        <Rectangle RadiusX="10" RadiusY="10" Opacity="0.80" Fill="#F8FFFFFF"/>
+        <Label x:Name="mass" Content="" HorizontalAlignment="Center" Height="33" Margin="20,70,20,0" VerticalAlignment="Top" Width="310" Foreground="#DD000000" FontSize="16"/>
+        <Grid
+  Width="124">
+            <Button
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    materialDesign:ButtonProgressAssist.Value="-1"
+    materialDesign:ButtonProgressAssist.IsIndicatorVisible="False"
+    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+    Content="Ok"
+    Margin="22,137,12,31" Background="Black" BorderBrush="Black" Click="clbtn" Foreground="#DDFFFFFF" />
+        </Grid>
+
+
+        <Label x:Name="label_Copy" Content="Massage" HorizontalAlignment="Left" Height="44" Margin="130,10,0,0" VerticalAlignment="Top" Width="105" Foreground="#DD000000" FontSize="24" Background="{x:Null}"/>
+        <Button
+  Style="{StaticResource MaterialDesignIconButton}"
+  Height="Auto" Margin="321,2,4,173" Width="Auto" Click="cbtn">
+            <materialDesign:PackIcon
+    Kind="Close" Foreground="Black" Width="19" Height="19" />
+        </Button>
+    </Grid>
+</Window>

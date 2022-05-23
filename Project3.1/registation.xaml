@@ -1,0 +1,86 @@
+﻿<Window x:Class="Project3._1.registation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project3._1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Icon="img/icone.ico" WindowStartupLocation="CenterScreen" Height="550" Width="725" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Foreground="{x:Null}" MouseDown="Window_MouseDown">
+    <Grid>
+        <Rectangle RadiusX="15" RadiusY="15" Opacity="0.95">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="img/thumb-1920-45182.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="cbtn"
+             Style="{StaticResource MaterialDesignIconButton}"
+             Height="Auto" Margin="686,5,11,516" Width="Auto" Click="clbtn">
+            <materialDesign:PackIcon
+             Kind="Close" Foreground="Green" />
+        </Button>
+        <Label x:Name="label_Copy" Content="Personal Book" HorizontalAlignment="Left" Margin="23,34,0,0" VerticalAlignment="Top" Foreground="#DDC5C5C5" FontSize="40"/>
+        <Grid HorizontalAlignment="Left" Height="380" Margin="395,70,0,0" VerticalAlignment="Top" Width="255">
+            <Rectangle RadiusX="10" RadiusY="10" Opacity="0.90" Fill="White" Margin="-1,10,1,-10"/>
+            <materialDesign:PackIcon Kind="UserKeyOutline" Margin="29,96,0,0" Foreground="Black" Height="24" Width="29" />
+            <TextBox x:Name="unam"
+                materialDesign:HintAssist.Hint="UserName"
+                materialDesign:HintAssist.Foreground="Green"
+                materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center" Margin="68,83,32,261" CaretBrush="Black" SelectionBrush="Black" Foreground="Black" />
+            <PasswordBox
+                x:Name="cpass"
+                materialDesign:HintAssist.Hint="Confirm Password"
+                materialDesign:HintAssist.Foreground="Green"
+                materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="68,232,32,112" CaretBrush="Black" SelectionBrush="Black" Foreground="Black" />
+            <materialDesign:PackIcon Kind="PasswordReset" Margin="36,248,0,0" Foreground="Black" Height="20" Width="23" />
+            <Grid
+               Width="124">
+                <Button x:Name="regbtn"
+                   Style="{StaticResource MaterialDesignRaisedButton}"
+    materialDesign:ButtonProgressAssist.Value="-1"
+    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+    Content="Registration"
+    Margin="6,291,6,57" Background="Green" BorderBrush="Green" Click="regclk" Foreground="#DDFFFFFF" />
+            </Grid>
+            <Label x:Name="label1" Content="Already have an account?" HorizontalAlignment="Left" Margin="31,329,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="lgbtn" Content="Login" HorizontalAlignment="Left" Margin="160,325,0,0" VerticalAlignment="Top" Width="66" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF279B27" FontSize="12" Click="logbtn"
+                    />
+            <materialDesign:PackIcon Kind="UserTie" Margin="32,135,0,0" Foreground="Black" Height="24" Width="29" />
+            <TextBox x:Name="nam"
+                materialDesign:HintAssist.Hint="Name"
+                materialDesign:HintAssist.Foreground="Green"
+                materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center" Margin="68,121,32,223" CaretBrush="Black" SelectionBrush="Black" Foreground="Black" />
+            <PasswordBox
+                x:Name="pass"
+                materialDesign:HintAssist.Hint="Password"
+                materialDesign:HintAssist.Foreground="Green"
+                materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="68,195,32,149" CaretBrush="Black" SelectionBrush="Black" Foreground="Black" />
+            <materialDesign:PackIcon Kind="PasswordReset" Margin="36,211,0,0" Foreground="Black" Height="20" Width="23" />
+            <materialDesign:PackIcon Kind="KeyVariant" Margin="34,171,0,0" Foreground="Black" Height="20" Width="26" />
+            <TextBox x:Name="fkey"
+                materialDesign:HintAssist.Hint="Forgot key"
+                materialDesign:HintAssist.Foreground="Green"
+                materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center" Margin="68,156,32,187" CaretBrush="Black" SelectionBrush="Black" Foreground="Black" Height="37" />
+            <Label x:Name="label2" Content="Registration" HorizontalAlignment="Left" Margin="33,37,0,0" VerticalAlignment="Top" FontSize="26" FontWeight="Bold" FontFamily="Leelawadee UI"/>
+
+        </Grid>
+        <Button x:Name="cbtn_Copy"
+            Style="{StaticResource MaterialDesignIconButton}"
+            Height="Auto" Margin="657,5,40,516" Width="Auto" Click="mini" >
+            <materialDesign:PackIcon
+                Kind="WindowMinimize" Foreground="Green" />
+        </Button>
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,92 @@
+﻿<Page x:Class="Project3._1.vewbank"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:local="clr-namespace:Project3._1"
+      mc:Ignorable="d" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="440" d:DesignWidth="485"
+      Title="vewbank">
+
+    <Grid>
+        <Grid>
+            <materialDesign:PackIcon Kind="FileDocumentBoxSearch" Margin="44,0,0,0" Height="30" Width="35" />
+            <TextBox
+  x:Name="shbx"
+                materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+  materialDesign:HintAssist.Hint="Search" Margin="82,0,118,415" SelectionBrush="Black" CaretBrush="Black" KeyDown="down" KeyUp="up" />
+        </Grid>
+        <Grid Margin="0,35,0,0">
+            <ScrollViewer>
+
+                <ItemsControl Name="id" ItemsSource="{Binding Bank}" Height="auto">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid IsItemsHost="True"
+                         Columns="1" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="10" BorderThickness="2"
+                    Background="#FFF1F1F1">
+                                <Grid >
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="160"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                        <Button Tag="{Binding id}"
+                                         Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                         ToolTip="Edit" Click="editclk"  >
+                                            <materialDesign:PackIcon
+                                         Kind="FileDocumentEditOutline" />
+                                        </Button>
+                                        <Button Tag="{Binding id}"
+                                          Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                          ToolTip="Delete" Click="delclk" >
+                                            <materialDesign:PackIcon
+                                          Kind="DeleteForever" />
+                                        </Button>
+                                    </StackPanel>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="1" Text="Bank Name :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="2" Text="Account Number :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="3" Text="Card Number :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="4" Text="Card Password :" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                    
+
+
+                                    <Label Grid.Row="1" Grid.Column="1" Margin="0,5,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"   FontFamily="Leelawadee UI" FontWeight="Bold">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding Bname}"/>
+                                    </Label>
+
+                                    <Label Grid.Row="2" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"   FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding Anumber}"/>
+                                    </Label>
+                                    <Label Grid.Row="3" Grid.Column="1"  Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"  FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding Cnumber}"/>
+                                    </Label>
+                                    <Label Grid.Row="4" Grid.Column="1"  Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"   FontFamily="Leelawadee UI">
+                                        <AccessText TextWrapping="WrapWithOverflow" Text="{Binding Cpassword}"/>
+                                    </Label>
+                                    
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

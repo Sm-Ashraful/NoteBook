@@ -1,0 +1,72 @@
+﻿<Window x:Class="Project3._1.editcont"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project3._1"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="editcont"  WindowStartupLocation="CenterScreen" Height="440" Width="485" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}"  ResizeMode="NoResize" MouseDown="down">
+    <Grid>
+        <Rectangle RadiusX="10" RadiusY="10" Opacity="0.95" Fill="#F8E0E0E0"/>
+        <materialDesign:PackIcon Kind="UserBadgeAlert" Height="27" Width="27" Margin="53,71,0,0" Foreground="Black" />
+        <TextBox x:Name="name"
+            materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+  materialDesign:HintAssist.Hint="Name"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" Margin="90,55,50,344" CaretBrush="Black" SelectionBrush="Black" Height="41" Foreground="Black" />
+        <Grid
+  Width="124">
+            <materialDesign:PackIcon Kind="FormatListNumbers" Margin="-125,122,0,0" Height="27" Width="23" Foreground="Black" />
+            <TextBox x:Name="number"
+                materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+                materialDesign:HintAssist.Hint="Number"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center" Margin="-90,104,-131,297" CaretBrush="Black" SelectionBrush="Black" Height="39" Foreground="Black" />
+            <materialDesign:PackIcon Kind="EmailVariant" Margin="-123,170,0,0" Height="22" Width="21" Foreground="Black" />
+            <TextBox x:Name="email"
+                materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+                materialDesign:HintAssist.Hint="Email"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center" Margin="-90,152,-131,250" CaretBrush="Black" SelectionBrush="Black" Height="38" Foreground="Black" />
+            <materialDesign:PackIcon Kind="Facebook" Margin="-125,211,0,0" Height="26" Width="23" Foreground="Black" />
+            <TextBox x:Name="fb"
+                materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+                materialDesign:HintAssist.Hint="Facebook"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center" Margin="-90,197,-131,203" CaretBrush="Black" SelectionBrush="Black" Height="40" Foreground="Black" />
+            <materialDesign:PackIcon Kind="ChartDonut" Margin="-122,259,0,0" Height="22" Width="22" Foreground="Black" />
+            <TextBox x:Name="other"
+                materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+                materialDesign:HintAssist.Hint="Other"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center" Margin="-90,240,-131,160" CaretBrush="Black" SelectionBrush="Black" Height="40" Foreground="Black" />
+            <materialDesign:PackIcon Kind="AddLocation" Margin="-121,303,0,0" Height="21" Width="22" Foreground="Black" />
+            <TextBox x:Name="add"
+                materialDesign:HintAssist.Foreground="Black"
+                materialDesign:TextFieldAssist.UnderlineBrush="Black"
+                materialDesign:HintAssist.Hint="Address"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center" Margin="-90,285,-131,117" CaretBrush="Black" SelectionBrush="Black" Height="38" Foreground="Black" />
+        </Grid>
+        <Button
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    Margin="163,355,192,45" Height="Auto" Background="Black" FontSize="20" Click="Button_Click_2">
+            Save
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+             Margin="308,355,47,45" Height="Auto" Background="Black" Content="Close" FontSize="18" Click="Button_Click_1"/>
+        <Button
+  Style="{StaticResource MaterialDesignIconForegroundButton}"
+   Foreground="Black" Margin="446,5,6,402" Height="Auto" Width="Auto" Click="Button_Click">
+            <materialDesign:PackIcon
+    Kind="Close" />
+        </Button>
+    </Grid>
+</Window>
