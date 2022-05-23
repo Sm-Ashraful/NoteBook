@@ -49,5 +49,4 @@ BACK – END DESCRIPTION:
          
 ![2](https://user-images.githubusercontent.com/59042800/76698977-b390d480-66d2-11ea-92cd-7f5a32fb2f0f.jpg)
 ![1](https://user-images.githubusercontent.com/59042800/76698979-b7bcf200-66d2-11ea-9f54-c8df144e3f5c.jpg)
-![3](https://user-images.githubusercontent.com/59042800/76699075-e6879800-66d3-11ea-9c41-eed2a02574c4.jpg)
-![4](https://user-images.githubusercontent.com/59042800/76699076-eb4c4c00-66d3-11ea-84ce-0e0a24bde8d4.jpg)
+
